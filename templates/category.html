@@ -1,23 +1,132 @@
 <div class="col-md-2">
+
   <div class="col-md-12">
     <h5>{{title}}</h5>
   </div>
   <div class="col-md-12">
-    <a href="#"><h5>{{valueOne}}</h5></a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{idOne}}">{{valueOne}}</button>
+    <div id="{{idOne}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Value: {{valueOne}} Id: {{idOne}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{questionOne}}</p>
+          </div>
+          <div class="modal-footer">
+            <form role="form" ng-submit="addScore(userInput)">
+              <input type="text" name="{{idOne}}" ng-model="userInput" class="form-control" placeholder="{{answerOne}}">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-md-12">
-    <a href="#"><h5>{{valueTwo}}</h5></a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{idTwo}}">{{valueTwo}}</button>
+    <div id="{{idTwo}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Value: {{valueTwo}} Id: {{idTwo}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{questionTwo}}</p>
+          </div>
+          <div class="modal-footer">
+            <form role="form" ng-submit="addScore(userInput)">
+              <input type="text" name="{{idOne}}" ng-model="userInput" class="form-control" placeholder="{{answerOne}}">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-md-12">
-    <a href="#"><h5>{{valueThree}}</h5></a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{idThree}}">{{valueThree}}</button>
+    <div id="{{idThree}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Value: {{valueThree}} Id: {{idThree}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{questionThree}}</p>
+          </div>
+          <div class="modal-footer">
+            <form role="form" ng-submit="addScore(userInput)">
+              <input type="text" name="{{idOne}}" ng-model="userInput" class="form-control" placeholder="{{answerOne}}">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-md-12">
-    <a href="#"><h5>{{valueFour}}</h5></a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{idFour}}">{{valueFour}}</button>
+    <div id="{{idFour}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Value: {{valueFour}} Id: {{idFour}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{questionFour}}</p>
+          </div>
+          <div class="modal-footer">
+            <form role="form" ng-submit="addScore(userInput)">
+              <input type="text" name="{{idOne}}" ng-model="userInput" class="form-control" placeholder="{{answerOne}}">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
   <div class="col-md-12">
-    <a href="#"><h5>{{valueFive}}</h5></a>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{idFive}}">{{valueFive}}</button>
+    <div id="{{idFive}}" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Value: {{valueFive}} Id: {{idFive}}</h4>
+          </div>
+          <div class="modal-body">
+            <p>{{questionFive}}</p>
+          </div>
+          <div class="modal-footer">
+            <form role="form" ng-submit="addScore(userInput)">
+              <input type="text" name="{{idOne}}" ng-model="userInput" class="form-control" placeholder="{{answerOne}}">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <!-- <div ng-transclude>
-    <question-col question-value="{{question.data.clues.value}}"></question-col>
-  </div> -->
+
 </div>

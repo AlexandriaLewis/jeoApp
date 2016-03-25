@@ -1,10 +1,27 @@
-<h1>home page load</h1>
+<h1>score: {{score}}</h1>
 <div ng-repeat="category in categories">
   <title-bar title="{{category.data.title}}"
              value-one="{{category.data.clues[0].value}}"
+             id-one="{{category.data.clues[0].id}}"
              value-two="{{category.data.clues[1].value}}"
+             id-two="{{category.data.clues[1].id}}"
              value-three="{{category.data.clues[2].value}}"
+             id-three="{{category.data.clues[2].id}}"
              value-four="{{category.data.clues[3].value}}"
-             value-five="{{category.data.clues[4].value}}">
+             id-four="{{category.data.clues[3].id}}"
+             value-five="{{category.data.clues[4].value}}"
+             id-five="{{category.data.clues[4].id}}"
+             question-one="{{category.data.clues[0].question}}"
+             question-two="{{category.data.clues[1].question}}"
+             question-three="{{category.data.clues[2].question}}"
+             question-four="{{category.data.clues[3].question}}"
+             question-five="{{category.data.clues[4].question}}"
+             answer-one="{{category.data.clues[0].answer}}"
+             answer-two="{{category.data.clues[1].answer}}"
+             answer-three="{{category.data.clues[2].answer}}"
+             answer-four="{{category.data.clues[3].answer}}"
+             answer-five="{{category.data.clues[4].answer}}"
+             add-score="addScore()">
   </title-bar>
+
 </div>
