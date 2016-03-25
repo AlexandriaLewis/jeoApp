@@ -5,8 +5,13 @@ angular
       templateUrl: '../templates/category.html',
       restrict: 'E',
       scope: {
-        title: '@'
-      },
-      transclude: true,
+        title: '@',
+        valueOne: '@',
+        valueTwo: '@',
+        valueThree: '@',
+        valueFour: '@',
+        valueFive: '@'
+
+      }
     }
   })

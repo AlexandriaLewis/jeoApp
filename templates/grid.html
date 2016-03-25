@@ -1,4 +1,10 @@
 <h1>home page load</h1>
 <div ng-repeat="category in categories">
-  <title-bar title="{{category.data.title}}"></title-bar>
+  <title-bar title="{{category.data.title}}"
+             value-one="{{category.data.clues[0].value}}"
+             value-two="{{category.data.clues[1].value}}"
+             value-three="{{category.data.clues[2].value}}"
+             value-four="{{category.data.clues[3].value}}"
+             value-five="{{category.data.clues[4].value}}">
+  </title-bar>
 </div>
