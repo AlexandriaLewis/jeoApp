@@ -45,37 +45,30 @@ angular
       templateUrl: '../templates/category.html',
       restrict: 'E',
       scope: {
-        title: '@',
-        valueOne: '@',
-        valueTwo: '@',
-        valueThree: '@',
-        valueFour: '@',
-        valueFive: '@',
-        idOne: '@',
-        idTwo: '@',
-        idThree: '@',
-        idFour: '@',
-        idFive: '@',
-        questionOne: '@',
-        questionTwo: '@',
-        questionThree: '@',
-        questionFour: '@',
-        questionFive: '@',
-        answerOne: '@',
-        answerTwo: '@',
-        answerThree: '@',
-        answerFour: '@',
-        answerFive: '@',
-        addScore: '&'
+        addScore: '&',
+        question: '='
       },
       controller: function($rootScope,$scope){
         console.log('i should have 6');
         $scope.addScore = function(val){
           console.log('clicked a btn',val);
+          var cluesArr = $scope.question.clues;
+          console.log('scope',cluesArr);
         }
       }
     }
   })
+  // .directive('questionBar', function(){
+  //   return {
+  //     templateUrl: '../templates/category.html',
+  //     restrict: 'E',
+  //     scope: {
+  //       answer: '='
+  //     },
+  //     controller: function($rootScope,$scope){
+  //
+  //     }
+  // })
 
 },{}],4:[function(require,module,exports){
 var angular = require('angular');
