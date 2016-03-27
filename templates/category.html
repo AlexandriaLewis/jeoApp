@@ -3,7 +3,7 @@
     <h5>{{question.title}}</h5>
   </div>
   <div class="col-md-12" ng-repeat="clue in question.clues">
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#{{clue.id}}">{{clue.value}}</button>
+    <button type="button" class="btn btn-primary btn-lg {{clue.id}} board" data-toggle="modal" data-target="#{{clue.id}}">{{clue.value}}</button>
     <div id="{{clue.id}}" class="modal fade" role="dialog">
       <div class="modal-dialog">
 
@@ -18,7 +18,7 @@
           <div class="modal-footer">
             <form role="form" ng-submit="addScore(userInput, clue.answer, clue.value)">
               <input type="text" name="{{clue.id}}" ng-model="userInput" class="form-control" placeholder="{{clue.answer}}">
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button ng-click="disableBtn(clue.id)" type="submit" class="btn btn-default">Submit</button>
             </form>
           </div>
         </div>
