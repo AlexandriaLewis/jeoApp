@@ -10,10 +10,16 @@ angular
       },
       controller: function($rootScope,$scope){
         console.log('i should have 6');
-        $scope.addScore = function(val){
-          console.log('clicked a btn',val);
+        $scope.addScore = function(input, answer, val){
+          console.log('clicked a btn',input);
           var cluesArr = $scope.question.clues;
-          console.log('scope',cluesArr);
+          console.log('scope arr',cluesArr);
+          console.log('answer',answer);
+          if(input === answer){
+            $rootScope.score += val;
+          }else{
+            $rootScope.score -= val;
+          }
         }
       }
     }

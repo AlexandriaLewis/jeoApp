@@ -7,7 +7,7 @@ angular
     var story = "http://jservice.io/api/category?id=11525";
     var drink = "http://jservice.io/api/category?id=11547";
     var doctor = "http://jservice.io/api/category?id=11569";
-    var cors = "https://free-cors-server.herokuapp.com/any-request/"
+    var cors = "https://free-cors-server.herokuapp.com/any-request/";
 
     var categoryArr = [visual,contract,batman,story,drink,doctor];
 
