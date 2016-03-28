@@ -1,4 +1,58 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+var angular = require('angular');
+var angularRoute = require('angular-route');
+
+angular
+  .module('gameboard',['ngRoute','jeoApp'])
+  .config(function($routeProvider) {
+    $routeProvider
+    .when('/',{
+          templateUrl: "main.html"
+        })
+    .when('/404',{
+        template: '<h1> You done goofed </h1>'
+      })
+    .otherwise({
+       redirectTo: '/404'
+    })
+});
+
+require('./jeoApp');
+// require('./jeoApp/category.controller');
+// require('./jeoApp/category.service');
+// require('./jeoApp/boardDirective');
+
+},{"./jeoApp":5,"angular":10,"angular-route":8}],2:[function(require,module,exports){
+angular
+  .module('jeoApp')
+  .directive('titleBar', function() {
+    return {
+      templateUrl: 'jeoApp/templates/category.html',
+      restrict: 'E',
+      scope: {
+        addScore: '&',
+        question: '='
+      },
+      controller: function($rootScope,$scope){
+        console.log('i should have 6');
+        $scope.addScore = function(input, answer, val){
+          console.log('clicked a btn',input);
+          console.log('answer',answer);
+          if(input === answer){
+            $rootScope.score += val;
+          }else{
+            $rootScope.score -= val;
+          }
+        };
+        $scope.disableBtn = function(id){
+          $('button.'+id).prop('disabled', true);
+          $('#'+id).modal('hide');
+        };
+      }
+    }
+  })
+
+},{}],3:[function(require,module,exports){
 angular
   .module('jeoApp')
   .controller('CategoryController', function($scope,$rootScope,$location,CategoryService) {
@@ -9,7 +63,7 @@ angular
     })
   })
 
-},{}],2:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 angular
   .module('jeoApp')
   .service('CategoryService',function($http, $q, $cacheFactory) {
@@ -37,37 +91,13 @@ angular
     }
 })
 
-},{}],3:[function(require,module,exports){
-angular
-  .module('jeoApp')
-  .directive('titleBar', function() {
-    return {
-      templateUrl: '../templates/category.html',
-      restrict: 'E',
-      scope: {
-        addScore: '&',
-        question: '='
-      },
-      controller: function($rootScope,$scope){
-        console.log('i should have 6');
-        $scope.addScore = function(input, answer, val){
-          console.log('clicked a btn',input);
-          console.log('answer',answer);
-          if(input === answer){
-            $rootScope.score += val;
-          }else{
-            $rootScope.score -= val;
-          }
-        };
-        $scope.disableBtn = function(id){
-          $('button.'+id).prop('disabled', true);
-          $('#'+id).modal('hide');
-        };
-      }
-    }
-  })
+},{}],5:[function(require,module,exports){
+require('./jeo.module');
+require('./category.controller');
+require('./category.service');
+require('./boardDirective');
 
-},{}],4:[function(require,module,exports){
+},{"./boardDirective":2,"./category.controller":3,"./category.service":4,"./jeo.module":6}],6:[function(require,module,exports){
 var angular = require('angular');
 var angularRoute = require('angular-route');
 
@@ -75,27 +105,13 @@ angular
   .module('jeoApp',['ngRoute'])
   .config(function($routeProvider) {
     $routeProvider
-    .when('/',{
-          templateUrl: "templates/grid.html",
-          controller: "CategoryController"
+    .when('/jeoapp',{
+          templateUrl: 'jeoApp/templates/grid.html',
+          controller: 'CategoryController'
         })
-    .when('/404',{
-        template: '<h1> You done goofed </h1>',
-        controller: 'CategoryController'
-      })
-    .otherwise({
-       redirectTo: '/404'
-    })
 });
 
-require('./category/category.controller');
-require('./question/question.controller');
-require('./category/category.service');
-require('./question/question.service');
-require('./directives/boardDirective')
-// require('./services/cacheEngine.service');
-
-},{"./category/category.controller":1,"./category/category.service":2,"./directives/boardDirective":3,"./question/question.controller":9,"./question/question.service":10,"angular":8,"angular-route":6}],5:[function(require,module,exports){
+},{"angular":10,"angular-route":8}],7:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.2
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -1119,11 +1135,11 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 })(window, window.angular);
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 require('./angular-route');
 module.exports = 'ngRoute';
 
-},{"./angular-route":5}],7:[function(require,module,exports){
+},{"./angular-route":7}],9:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.2
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31704,25 +31720,8 @@ $provide.value("$locale", {
 })(window, document);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],8:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":7}],9:[function(require,module,exports){
-angular
-  .module('jeoApp')
-  .controller('QuestionController', function($scope,$location,CategoryService,QuestionService) {
-    QuestionService.getQuestions().then(function(data){
-      console.log('categories the question controller',data);
-      // return $scope.categories = data;
-    })
-  })
-
-},{}],10:[function(require,module,exports){
-angular
-  .module('jeoApp')
-  .service('QuestionService',function($http, $q, $cacheFactory) {
-
-})
-
-},{}]},{},[4]);
+},{"./angular":9}]},{},[1]);

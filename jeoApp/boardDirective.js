@@ -2,7 +2,7 @@ angular
   .module('jeoApp')
   .directive('titleBar', function() {
     return {
-      templateUrl: '../templates/category.html',
+      templateUrl: 'jeoApp/templates/category.html',
       restrict: 'E',
       scope: {
         addScore: '&',
