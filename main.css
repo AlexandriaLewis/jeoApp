@@ -7,6 +7,13 @@ body.body {
   background-size: cover;
 }
 
+div.score {
+  background-color: #0000CD;
+  border: 2px solid #ffffff;
+  width: 30%;
+  margin: 0 auto;
+}
+
 h5 {
   color: #ffffff;
   text-align: center;
@@ -16,6 +23,7 @@ h5 {
 h1 {
   color: #ffffff;
   text-align: center;
+  margin: 5%;
 }
 
 p.question {
