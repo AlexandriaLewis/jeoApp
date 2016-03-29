@@ -18,14 +18,13 @@ angular
 });
 
 require('./jeoApp');
-// require('./jeoApp/category.controller');
-// require('./jeoApp/category.service');
-// require('./jeoApp/boardDirective');
 
 },{"./jeoApp":5,"angular":10,"angular-route":8}],2:[function(require,module,exports){
 angular
   .module('jeoApp')
-  .directive('titleBar', function() {
+  .directive('titleBar', titleBar);
+
+  function titleBar() {
     return {
       templateUrl: 'jeoApp/templates/category.html',
       restrict: 'E',
@@ -33,35 +32,44 @@ angular
         addScore: '&',
         question: '='
       },
-      controller: function($rootScope,$scope){
-        console.log('i should have 6');
-        $scope.addScore = function(input, answer, val){
-          console.log('clicked a btn',input);
-          console.log('answer',answer);
-          if(input === answer){
-            $rootScope.score += val;
-          }else{
-            $rootScope.score -= val;
-          }
-        };
-        $scope.disableBtn = function(id){
-          $('button.'+id).prop('disabled', true);
-          $('#'+id).modal('hide');
-        };
-      }
+      controller: BoardCtrl
     }
-  })
+  }
+
+  BoardCtrl.$inject = ['$rootScope','$scope']
+  function BoardCtrl($rootScope,$scope){
+    console.log('i should have 6');
+    $scope.addScore = function(input, answer, val){
+      console.log('clicked a btn',input);
+      console.log('answer',answer);
+      if(input === answer){
+        $rootScope.score += val;
+      }else{
+        $rootScope.score -= val;
+      }
+    };
+    $scope.disableBtn = function(id){
+      $('button.'+id).prop('disabled', true);
+      $('#'+id).modal('hide');
+    };
+  }
 
 },{}],3:[function(require,module,exports){
 angular
   .module('jeoApp')
-  .controller('CategoryController', function($scope,$rootScope,$location,CategoryService) {
+  .controller('CategoryController', CategoryController);
+
+  CategoryController.$inject = ['$scope','$rootScope','$location','CategoryService'];
+
+  function CategoryController($scope,$rootScope,$location,CategoryService) {
     $rootScope.score = 0;
+    var vm = this;
     CategoryService.getCategories().then(function(data){
       console.log('categories the controller',data);
-      $scope.categories = data;
+      vm.categories = data;
+      console.log('vm categories the controller',vm.categories);
     })
-  })
+  }
 
 },{}],4:[function(require,module,exports){
 angular
@@ -107,7 +115,7 @@ angular
     $routeProvider
     .when('/jeoapp',{
           templateUrl: 'jeoApp/templates/grid.html',
-          controller: 'CategoryController'
+          controller: 'CategoryController as CategoryCtrl'
         })
 });
 

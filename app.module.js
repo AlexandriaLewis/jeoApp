@@ -17,6 +17,3 @@ angular
 });
 
 require('./jeoApp');
-// require('./jeoApp/category.controller');
-// require('./jeoApp/category.service');
-// require('./jeoApp/boardDirective');

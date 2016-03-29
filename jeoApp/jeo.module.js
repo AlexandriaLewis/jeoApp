@@ -7,6 +7,6 @@ angular
     $routeProvider
     .when('/jeoapp',{
           templateUrl: 'jeoApp/templates/grid.html',
-          controller: 'CategoryController'
+          controller: 'CategoryController as CategoryCtrl'
         })
 });
