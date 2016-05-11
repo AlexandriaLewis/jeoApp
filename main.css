@@ -7,6 +7,25 @@ body.body {
   background-size: cover;
 }
 
+div.playbtn {
+  margin-top: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+button.play {
+  font-family: 'Fascinate', cursive;
+  font-size: 60px;
+  border-radius: 15px;
+  border: 5px solid #0000CD;
+  /*height: 100px;*/
+  /*width: 100px;*/
+  margin: 0 auto;
+  text-align: center;
+  background-color: transparent;
+}
+
 div.score {
   background-color: #0000CD;
   border: 2px solid #ffffff;
