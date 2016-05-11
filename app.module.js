@@ -1,5 +1,5 @@
-var angular = require('angular');
-var angularRoute = require('angular-route');
+// var angular = require('angular');
+// var angularRoute = require('angular-route');
 
 angular
   .module('gameboard',['ngRoute','jeoApp'])
@@ -20,4 +20,4 @@ angular
     })
 });
 
-require('./jeoApp');
+// require('./jeoApp');

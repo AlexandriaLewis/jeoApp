@@ -1,5 +1,5 @@
 angular
-  .module('jeoApp')
+  .module('gameboard')
   .service('CategoryService',function($http, $q, $cacheFactory) {
     var visual = "http://jservice.io/api/category?id=11500";
     var contract = "http://jservice.io/api/category?id=11513";

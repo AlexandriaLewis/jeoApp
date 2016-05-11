@@ -1,5 +1,5 @@
 angular
-  .module('jeoApp')
+  .module('gameboard')
   .controller('CategoryController', CategoryController);
 
   CategoryController.$inject = ['$scope','$rootScope','$location','CategoryService'];

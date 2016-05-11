@@ -1,10 +1,10 @@
 angular
-  .module('jeoApp')
+  .module('gameboard')
   .directive('titleBar', titleBar);
 
   function titleBar() {
     return {
-      templateUrl: 'jeoApp/templates/category.html',
+      templateUrl: 'templates/category.html',
       restrict: 'E',
       scope: {
         addScore: '&',
