@@ -6,8 +6,12 @@ angular
   .module('gameboard',['ngRoute','jeoApp'])
   .config(function($routeProvider) {
     $routeProvider
+    // .when('/',{
+    //       templateUrl: "main.html"
+    //     })
     .when('/',{
-          templateUrl: "main.html"
+          templateUrl: 'jeoApp/templates/grid.html',
+          controller: 'CategoryController as CategoryCtrl'
         })
     .when('/404',{
         template: '<h1> You done goofed </h1>'
