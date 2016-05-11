@@ -5,8 +5,8 @@ angular
   .module('jeoApp',['ngRoute'])
   .config(function($routeProvider) {
     $routeProvider
-    .when('/jeoapp',{
-          templateUrl: 'jeoApp/templates/grid.html',
-          controller: 'CategoryController as CategoryCtrl'
-        })
+    // .when('/jeoapp',{
+    //       templateUrl: 'jeoApp/templates/grid.html',
+    //       controller: 'CategoryController as CategoryCtrl'
+    //     })
 });
