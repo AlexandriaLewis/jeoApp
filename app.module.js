@@ -2,14 +2,14 @@
 // var angularRoute = require('angular-route');
 
 angular
-  .module('gameboard',['ngRoute','jeoApp'])
+  .module('gameboard',['ngRoute'])
   .config(function($routeProvider) {
     $routeProvider
     // .when('/',{
     //       templateUrl: "main.html"
     //     })
     .when('/',{
-          templateUrl: 'jeoApp/templates/grid.html',
+          templateUrl: 'templates/grid.html',
           controller: 'CategoryController as CategoryCtrl'
         })
     .when('/404',{
